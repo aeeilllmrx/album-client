@@ -31,8 +31,7 @@
     "start": "react-scripts-ts start",
     "webpack-dev-server": "webpack-dev-server",
     "dev": "webpack-dev-server --mode development",
-    "serve": "webpack --mode production",
-    "build": "yarn serve && yarn start"
+    "build": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
