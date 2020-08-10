@@ -6,6 +6,7 @@ import {
   Geographies,
   Geography,
   Marker,
+  Point,
 } from 'react-simple-maps';
 
 const geoUrl =
@@ -94,7 +95,7 @@ export const Map = ({ setTooltipCountry }) => {
           }
         </Geographies>
         {markers.map(({ name, coordinates, markerOffset }) => (
-          <Marker key={name} coordinates={coordinates}>
+          <Marker key={name} coordinates={[coordinates[0], coordinates[1]]}>
             <g
               fill="none"
               stroke="#FF5533"
