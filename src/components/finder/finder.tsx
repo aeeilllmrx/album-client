@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import './finder.css';
 
 function importAll(r) {
   return r.keys().map(r);
 }
 
-const prod = false;
-const server = prod ? 'unknown' : 'http://localhost:5000/';
+const prod = true;
+const server = prod
+  ? 'https://album-backend.herokuapp.com/'
+  : 'http://localhost:5000/';
 const images = importAll(
   require.context('../../images/greece/athens/', false, /^\.\/.*$/)
 );
