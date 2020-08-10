@@ -1,0 +1,14 @@
+.caption {
+  margin: auto;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.photo {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 42%;
+  height: auto;
+}
