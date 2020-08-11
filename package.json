@@ -28,11 +28,11 @@
   },
   "scripts": {
     "format": "prettier --write \"src/**/*.{tsx,css}\"",
-    "clean": "rm -rf dist/ && tsc",
-    "start": "react-scripts-ts start",
-    "webpack-dev-server": "webpack-dev-server",
+    "clean": "rm -rf dist/",
+    "compile": "tsc",
+    "prep": "yarn clean && yarn compile",
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "yarn prep && webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
