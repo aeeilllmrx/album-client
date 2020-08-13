@@ -19,7 +19,7 @@ export const Viewer = (props) => {
   const [country] = useState(props.country);
   const [id, setId] = useState(1);
   const [state, setState] = useState({
-    data: { id: 0, caption: '' },
+    data: { id: 1, caption: '' },
     left: { id: '', text: '' },
     center: { id: '', text: '' },
     right: { id: '', text: '' },
@@ -89,7 +89,11 @@ export const Viewer = (props) => {
       </Row>
 
       <Row>
-        <img className="photo" src={images[state.data.id - 1]} alt={''} />
+        <img
+          className="photo"
+          src={'/' + images[state.data.id - 1].default}
+          alt={''}
+        />
       </Row>
 
       <Row className="justify-content-md-center">
