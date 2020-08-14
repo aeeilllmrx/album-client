@@ -15,7 +15,7 @@ import { Viewer } from '../viewer/viewer';
 export function App() {
   const [content, setContent] = useState('');
 
-  const countries = ['Greece', 'India', 'Argentina'];
+  const countries = ['Greece'];
 
   return (
     <div>
@@ -56,18 +56,21 @@ export function App() {
           />
           <Route
             path="/travel/:country"
-            render={(props) => (
-              <div>
-                <Header />
-                <Viewer country={props.match.params.country} />
-              </div>
-            )}
+            render={(props) =>
+              countries.includes(props.match.params.country) ? (
+                <div>
+                  <Header />
+                  <Viewer country={props.match.params.country} />
+                </div>
+              ) : (
+                <Redirect to="/home" />
+              )
+            }
           />
           <Route
             path="/search/:text"
             render={(props) => (
               <div>
-                <Header />
                 <Finder text={props.match.params.text} />
               </div>
             )}

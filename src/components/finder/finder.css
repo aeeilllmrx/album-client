@@ -12,3 +12,10 @@
   width: 42%;
   height: auto;
 }
+
+.location {
+  margin: auto;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

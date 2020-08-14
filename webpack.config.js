@@ -15,7 +15,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(jpg)(\?[a-z0-9=.]+)?$/,
+        test: /\.(jpg|png)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader?limit=100000',
       },
     ],
