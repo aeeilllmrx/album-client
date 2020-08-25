@@ -10,13 +10,28 @@ const prod = true;
 const server = prod
   ? 'https://album-backend.herokuapp.com/'
   : 'http://localhost:5000/';
-const placeImages = importAll(
+const greeceImages = importAll(
   require.context('../../images/greece/athens/', false, /^\.\/.*$/)
+);
+const indiaImages = importAll(
+  require.context('../../images/india/all/', false, /^\.\/.*$/)
 );
 const helperImages = importAll(
   require.context('../../images/general/', false, /^\.\/.*$/)
 );
 const fetch = require('node-fetch'); // TODO: remove require
+const getImagePath = (id) => {
+  switch (true) {
+    case id === -1:
+      return '/' + helperImages[0].default;
+    case id <= 15:
+      return '/' + greeceImages[id - 1].default;
+    case id <= 62:
+      return '/' + indiaImages[id - 16].default;
+    default:
+      return '/' + helperImages[0].default;
+  }
+};
 
 export const Finder = (props) => {
   const [text] = useState(props.text);
@@ -63,15 +78,7 @@ export const Finder = (props) => {
       </Row>
 
       <Row>
-        <img
-          className="photo"
-          src={
-            state.data.id === -1
-              ? '/' + helperImages[0].default
-              : '/' + placeImages[state.data.id - 1].default
-          }
-          alt={''}
-        />
+        <img className="photo" src={getImagePath(state.data.id)} alt={''} />
       </Row>
 
       <Row>

@@ -10,16 +10,31 @@ const prod = true;
 const server = prod
   ? 'https://album-backend.herokuapp.com/'
   : 'http://localhost:5000/';
-const images = importAll(
+const greeceImages = importAll(
   require.context('../../images/greece/athens/', false, /^\.\/.*$/)
 );
+const indiaImages = importAll(
+  require.context('../../images/india/all/', false, /^\.\/.*$/)
+);
+const placeToFirstImage = {
+  Greece: 1,
+  India: 16,
+};
 const fetch = require('node-fetch'); // TODO: remove require
+const getImagePath = (id) => {
+  switch (true) {
+    case id <= 15:
+      return '/' + greeceImages[id - 1].default;
+    case id <= 62:
+      return '/' + indiaImages[id - 16].default;
+  }
+};
 
 export const Viewer = (props) => {
   const [country] = useState(props.country);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState(placeToFirstImage[props.country]);
   const [state, setState] = useState({
-    data: { id: 1, caption: '' },
+    data: { id: id, caption: '' },
     left: { id: '', text: '' },
     center: { id: '', text: '' },
     right: { id: '', text: '' },
@@ -89,11 +104,7 @@ export const Viewer = (props) => {
       </Row>
 
       <Row>
-        <img
-          className="photo"
-          src={'/' + images[state.data.id - 1].default}
-          alt={''}
-        />
+        <img className="photo" src={getImagePath(state.data.id)} alt={''} />
       </Row>
 
       <Row className="justify-content-md-center">
