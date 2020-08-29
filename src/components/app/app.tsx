@@ -15,7 +15,7 @@ import { Viewer } from '../viewer/viewer';
 export function App() {
   const [content, setContent] = useState('');
 
-  const countries = ['Greece', 'India', 'Thailand'];
+  const countries = ['Greece', 'India', 'Thailand', 'Indonesia'];
 
   return (
     <div>

@@ -19,6 +19,9 @@ const indiaImages = importAll(
 const thailandImages = importAll(
   require.context('../../images/thailand/all/', false, /^\.\/.*$/)
 );
+const indonesiaImages = importAll(
+  require.context('../../images/indonesia/all/', false, /^\.\/.*$/)
+);
 const helperImages = importAll(
   require.context('../../images/general/', false, /^\.\/.*$/)
 );
@@ -33,6 +36,8 @@ const getImagePath = (id) => {
       return '/' + indiaImages[id - 16].default;
     case id <= 104:
       return '/' + thailandImages[id - 63].default;
+    case id <= 147:
+      return '/' + indonesiaImages[id - 105].default;
     default:
       return '/' + helperImages[0].default;
   }
