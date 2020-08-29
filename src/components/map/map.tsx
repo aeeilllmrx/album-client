@@ -6,7 +6,6 @@ import {
   Geographies,
   Geography,
   Marker,
-  Point,
 } from 'react-simple-maps';
 
 const geoUrl =

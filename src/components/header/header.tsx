@@ -33,8 +33,8 @@ export const Header = () => {
         <LinkContainer to="/travel/India">
           <NavDropdown.Item>India</NavDropdown.Item>
         </LinkContainer>
-        <LinkContainer to="/travel/Argentina">
-          <NavDropdown.Item>Argentina</NavDropdown.Item>
+        <LinkContainer to="/travel/Thailand">
+          <NavDropdown.Item>Thailand</NavDropdown.Item>
         </LinkContainer>
         <LinkContainer to="/travel/random">
           <NavDropdown.Item>Random!</NavDropdown.Item>

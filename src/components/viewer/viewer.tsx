@@ -16,9 +16,13 @@ const greeceImages = importAll(
 const indiaImages = importAll(
   require.context('../../images/india/all/', false, /^\.\/.*$/)
 );
+const thailandImages = importAll(
+  require.context('../../images/thailand/all/', false, /^\.\/.*$/)
+);
 const placeToFirstImage = {
   Greece: 1,
   India: 16,
+  Thailand: 63,
 };
 const fetch = require('node-fetch'); // TODO: remove require
 const getImagePath = (id) => {
@@ -27,6 +31,8 @@ const getImagePath = (id) => {
       return '/' + greeceImages[id - 1].default;
     case id <= 62:
       return '/' + indiaImages[id - 16].default;
+    case id <= 104:
+      return '/' + thailandImages[id - 63].default;
   }
 };
 
