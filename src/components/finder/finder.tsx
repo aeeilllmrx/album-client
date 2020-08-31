@@ -16,11 +16,14 @@ const greeceImages = importAll(
 const indiaImages = importAll(
   require.context('../../images/india/all/', false, /^\.\/.*$/)
 );
-const thailandImages = importAll(
-  require.context('../../images/thailand/all/', false, /^\.\/.*$/)
-);
 const indonesiaImages = importAll(
   require.context('../../images/indonesia/all/', false, /^\.\/.*$/)
+);
+const italyImages = importAll(
+  require.context('../../images/italy/all/', false, /^\.\/.*$/)
+);
+const thailandImages = importAll(
+  require.context('../../images/thailand/all/', false, /^\.\/.*$/)
 );
 const helperImages = importAll(
   require.context('../../images/general/', false, /^\.\/.*$/)
@@ -38,6 +41,8 @@ const getImagePath = (id) => {
       return '/' + thailandImages[id - 63].default;
     case id <= 147:
       return '/' + indonesiaImages[id - 105].default;
+    case id <= 190:
+      return '/' + italyImages[id - 148].default;
     default:
       return '/' + helperImages[0].default;
   }
