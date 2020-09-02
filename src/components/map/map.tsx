@@ -11,16 +11,7 @@ import {
 const geoUrl =
   'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
 
-const visited = new Set([
-  'Thailand',
-  'Indonesia',
-  'India',
-  'Greece',
-  'Italy',
-  'Spain',
-  'United Kingdom',
-  'Argentina',
-]);
+const visited = new Set(['Thailand', 'Indonesia', 'India', 'Greece', 'Italy']);
 
 const markers = [
   {
@@ -32,9 +23,6 @@ const markers = [
   { markerOffset: 15, name: 'India', coordinates: [78.9629, 20.5937] },
   { markerOffset: 15, name: 'Greece', coordinates: [21.8243, 39.0742] },
   { markerOffset: 15, name: 'Italy', coordinates: [12.5674, 41.8719] },
-  { markerOffset: 15, name: 'Spain', coordinates: [-3.7492, 40.4637] },
-  { markerOffset: 15, name: 'United Kingdom', coordinates: [-3.436, 55.3781] },
-  { markerOffset: 15, name: 'Argentina', coordinates: [-63.6167, -38.4161] },
 ];
 
 export const Map = ({ setTooltipCountry }) => {
