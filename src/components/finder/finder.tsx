@@ -51,7 +51,7 @@ const getImagePath = (id) => {
 export const Finder = (props) => {
   const [text] = useState(props.text);
   const [state, setState] = useState({
-    data: { id: 1, caption: '', city: '', country: '' },
+    data: { id: -1, caption: '', city: '', country: '' },
   });
 
   useEffect(() => {
